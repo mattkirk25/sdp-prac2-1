@@ -4,7 +4,7 @@ import java.util.*;
 
 public class SimpleFunctions {
     public SimpleFunctions() {}
-    
+
     /** Function to return the sum of the elements of a at the indices specified by b
       * <BR><I>Pre-Condition</I>    Both of the lists are lists of integers<BR>
       * <BR><I>Post-Condition</I>   NONE<BR>

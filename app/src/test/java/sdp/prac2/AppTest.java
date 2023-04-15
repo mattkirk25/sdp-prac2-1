@@ -10,9 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
     /**
      * Task 2 - Tests
-     * Test the method which removes the first character from 
-     * every element in a list. If an element has no characters, remove it from
-     * the output.
+     * Method which removes the first character from every element in a list. 
+     * If an element has no characters, remove it from the output.
     */
     @Test void Task2(){
         // Test 1
@@ -48,5 +47,14 @@ class AppTest {
         List<String> result4 = classBeingTested.Task2(data4);
         // Assert
         assertIterableEquals(expected4, result4);
+        // Test 5
+        // Arrange
+        List<String> data5 = Arrays.asList();
+        List<String> expected5 = Arrays.asList();
+        // Act
+        List<String> result5 = classBeingTested.Task2(data5);
+        // Assert
+        assertIterableEquals(expected5, result5);
+        
     }
 }
