@@ -57,4 +57,31 @@ class AppTest {
         assertIterableEquals(expected5, result5);
         
     }
+    @Test void Task3(){
+         // Test 1
+        // Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        List<String> data = Arrays.asList("((()))", "(()))", "(((((((((())))))))))", "(())()", ")(())");
+        List<String> expected = Arrays.asList("true", "false", "true", "true", "false");
+        // Act
+        List<String> result = classBeingTested.Task3(data);
+        // Assert
+        assertIterableEquals(expected, result);
+        // Test 2
+        // Arrange
+        List<String> data2 = Arrays.asList("((()))))))", "((((((((()))))))))))))))))", "((()))");
+        List<String> expected2 = Arrays.asList("false", "false", "true");
+        // Act
+        List<String> result2 = classBeingTested.Task3(data2);
+        // Assert
+        assertIterableEquals(expected2, result2);
+        // Test 3
+        // Arrange
+        List<String> data3 = Arrays.asList("", "(((((((())))", "((()))");
+        List<String> expected3 = Arrays.asList("false", "false", "true");
+        // Act
+        List<String> result3 = classBeingTested.Task3(data3);
+        // Assert
+        assertIterableEquals(expected3, result3);
+    }
 }
