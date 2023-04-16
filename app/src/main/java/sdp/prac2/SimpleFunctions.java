@@ -33,4 +33,20 @@ public class SimpleFunctions {
         };
         return output;
     }
+
+    public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
+        List<Integer> res = new ArrayList<Integer>();   //create new list to store the new elements 
+        if (a.size() != b.size()) {
+            return null     //returns null if lists are not same size
+        } else {
+            int mult;
+            for (int i = 0; i < a.size(); i++){
+                //iterates through list multiplying necessary elements 
+                //adds result to the new list
+                mult = a.get(i) * b.get(b.size() - 1 - i);
+                res.add(mult);
+            }
+            return res;
+        }
+    }
 }
