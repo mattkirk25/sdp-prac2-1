@@ -33,4 +33,17 @@ public class SimpleFunctions {
         };
         return output;
     }
+
+    public static boolean Task3 (List<String> st){
+        let mutable count = 0   //mutable is needed for change in variable value
+        for i = 0 to st.Length - 1 do
+            match st.[i] with
+            | '(' -> count = count + 1
+            | ')' -> count = count - 1
+            | _ -> ()
+            if count < 0 then
+                return false
+        count = 0
+        true
+    } 
 }
