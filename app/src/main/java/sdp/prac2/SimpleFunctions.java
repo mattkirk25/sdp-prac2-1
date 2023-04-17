@@ -33,4 +33,14 @@ public class SimpleFunctions {
         };
         return output;
     }
+
+    public static boolean Task5 (List<Integer> a){
+        int n = a.size();
+        for(int i = 1; i < n; i++){
+            if(a.get(i)<a.get(i-1)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
