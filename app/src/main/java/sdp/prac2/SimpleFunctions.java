@@ -34,18 +34,26 @@ public class SimpleFunctions {
         return output;
     }
 
-    public static boolean Task3 (List<String> st){
-        let mutable count = 0   //mutable is needed for change in variable value
-        for i = 0 to st.Length - 1 do
-            match st.[i] with
-            | '(' -> count = count + 1
-            | ')' -> count = count - 1
-            | _ -> ()
-            if count < 0 then
-                return false
-        count = 0
-        true
-    } 
+    public static boolean Task3(List<String> st) {
+        int count = 0;
+        for (int i = 0; i < st.size(); i++) {
+            String s = st.get(i);
+            switch (s) {
+                case "(":
+                    count++;
+                    break;
+                case ")":
+                    count--;
+                    break;
+                default:
+                    break;
+            }
+            if (count < 0) {
+                return false;
+            }
+        }
+        return count == 0;
+    }
 
     public static boolean Task5 (List<Integer> a){
         int n = a.size();
