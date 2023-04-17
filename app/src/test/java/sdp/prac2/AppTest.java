@@ -84,4 +84,34 @@ class AppTest {
         // Assert
         assertIterableEquals(expected3, result3);
     }
+    @Test void Task6(){
+        //test 1
+        //Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        List<Integer> data = Arrays.asList(200, 345, 500, 1789);
+        List<Integer> expectedOutput = Arrays.asList(200, 400, 500, 1800);
+        // Act
+        List<Integer> result = classBeingTested.Task6(data);
+        // Assert
+        assertIterableEquals(expectedOutput, result);
+
+        // test 2
+        // Arrange
+        List<Integer> data2 =  Arrays.asList();
+        List<Integer> expectedOutput2 = Arrays.asList();
+        // Act 
+        List<Integer> result2 = classBeingTested.Task6(data2);
+        // Assert
+        assertIterableEquals(expectedOutput2, result2);
+
+        // test 3
+        // Arrange
+        List<Integer> data3 =  Arrays.asList(-200, -345, -500, -1789);
+        List<Integer> expectedOutput3 = Arrays.asList(-100, -300, -500, -1700);
+        // Act 
+        List<Integer> result3 = classBeingTested.Task6(data3);
+        // Assert
+        assertIterableEquals(expectedOutput3, result3);
+
+    }
 }
