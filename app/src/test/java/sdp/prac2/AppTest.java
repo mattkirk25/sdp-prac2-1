@@ -84,4 +84,51 @@ class AppTest {
         // Assert
         assertIterableEquals(expected3, result3);
     }
+
+    //Task 4 - method to accept lists of integers a and b, and
+    //multiplies the first element of a with the last element of b, then the
+    //second element of a with the second-last element of b, and so on. The
+    //resulting list is returned. If lists are different sizes, return null.
+    @Test void Task4(){
+        //Test 1
+        //Arrange 
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        List<Integer> a = Arrays.asList(1,2,3,4);
+        List<Integer> b = Arrays.asList(5,6,7,8);
+        List<Integer> expected = Arrays.asList(8,14,18,20);
+        //Act
+        List<Integer> result = classBeingTested.Task4(a,b);
+        //Assert
+        assertIterableEquals(expected, result);
+
+        //Test 2
+        //Arrange 
+        List<Integer> a2 = Arrays.asList(5,66,3,2);
+        List<Integer> b2 = Arrays.asList(5,6,7);
+        List<Integer> expected2 = null;
+        //Act
+        List<Integer> result2 = classBeingTested.Task4(a2,b2);
+        //Assert
+        assertIterableEquals(expected2, result2);
+
+        //Test 3
+        //Arrange 
+        List<Integer> a3 = Arrays.asList(4,6,3,99);
+        List<Integer> b3 = Arrays.asList(5,10,7,3);
+        List<Integer> expected3 = Arrays.asList(13,42,30,495);
+        //Act
+        List<Integer> result3 = classBeingTested.Task4(a3,b3);
+        //Assert
+        assertIterableEquals(expected3, result3);
+
+        //Test 4
+        //Arrange 
+        List<Integer> a4 = Arrays.asList(5,66);
+        List<Integer> b4 = Arrays.asList(5,6,7);
+        List<Integer> expected4 = null;
+        //Act
+        List<Integer> result4 = classBeingTested.Task4(a4,b4);
+        //Assert
+        assertIterableEquals(expected4, result4);
+    }
 }
