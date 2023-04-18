@@ -66,7 +66,7 @@ public class SimpleFunctions {
     return true;
   }
 
-  public static List<Integer> roundToNext100(List<Integer> numbers) {
+  public static List<Integer> Task6 (List<Integer> numbers) {
     /*
     Rounds up each number in the provided integer list to the next-highest multiple of 100. 
     If a number is already a multiple of 100, it is left unchanged. 
