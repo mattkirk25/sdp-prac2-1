@@ -55,6 +55,7 @@ public class SimpleFunctions {
     }
     return count == 0;
   }
+
   public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
         List<Integer> res = new ArrayList<Integer>();   //create new list to store the new elements 
         if (a.size() < b.size() || a.size() > b.size()) {
