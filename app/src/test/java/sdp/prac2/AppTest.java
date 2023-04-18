@@ -8,6 +8,54 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+  
+		@Test void testTask1() {
+        // Test 1
+        List<Integer> a1 = Arrays.asList(10, 20, 30, 40, 50);
+        List<Integer> b1 = Arrays.asList(0, 2, 4);
+        int expectedSum1 = 10 + 30 + 50;
+
+        int actualSum1 = 0;
+        for (int i = 0; i < b1.size(); i++) {
+            int indexToGet = b1.get(i);
+            if (indexToGet < a1.size()) {
+                actualSum1 += a1.get(indexToGet);
+            }
+        }
+
+        assert actualSum1 == expectedSum1 : "Test 1 failed: Expected " + expectedSum1 + ", but got " + actualSum1;
+
+        // Test 2
+        List<Integer> a2 = Arrays.asList(10, 20, 30, 40, 50);
+        List<Integer> b2 = Arrays.asList();
+        int expectedSum2 = 0;
+
+        int actualSum2 = 0;
+        for (int i = 0; i < b2.size(); i++) {
+            int indexToGet = b2.get(i);
+            if (indexToGet < a2.size()) {
+                actualSum2 += a2.get(indexToGet);
+            }
+        }
+
+        assert actualSum2 == expectedSum2 : "Test 2 failed: Expected " + expectedSum2 + ", but got " + actualSum2;
+
+        // Test 3
+        List<Integer> a3 = Arrays.asList(10, 20, 30, 40, 50);
+        List<Integer> b3 = Arrays.asList(3, 5, 7);
+        int expectedSum3 = 0;
+
+        int actualSum3 = 0;
+        for (int i = 0; i < b3.size(); i++) {
+            int indexToGet = b3.get(i);
+            if (indexToGet < a3.size()) {
+                actualSum3 += a3.get(indexToGet);
+            }
+        }
+
+        assert actualSum3 == expectedSum3 : "Test 3 failed: Expected " + expectedSum3 + ", but got " + actualSum3;
+    }
+
     /**
      * Task 2 - Tests
      * Method which removes the first character from every element in a list. 
@@ -131,7 +179,8 @@ class AppTest {
         //Assert
         assertIterableEquals(expected4, result4);
     }
-    @Test void Task5(){
+
+  @Test void Task5(){
         //Test 1
         //Arrange
         SimpleFunctions classBeingTested = new SimpleFunctions();
