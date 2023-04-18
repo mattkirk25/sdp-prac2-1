@@ -131,4 +131,33 @@ class AppTest {
         //Assert
         assertIterableEquals(expected4, result4);
     }
+    @Test void Task5(){
+        //Test 1
+        //Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
+        boolean expected = true;
+        //Act
+        boolean result = classBeingTested.Task5(a);
+        //Assert
+        assertEquals(expected, result);
+
+        //Test 2
+        //Arrange
+        List<Integer> b = Arrays.asList(1, 2, 6, 3, 4, 5);
+        boolean expected1 = false;
+        //Act
+        boolean result1 = classBeingTested.Task5(b);
+        //Assert
+        assertEquals(expected1, result1);
+
+        //Test 3
+        //Arrange
+        List<Integer> c = Arrays.asList(3, 4, 7, 9, 21);
+        boolean expected2 = true;
+        //Act
+        boolean result2 = classBeingTested.Task5(c);
+        //Assert
+        assertEquals(expected2, result2);
+    }
 }

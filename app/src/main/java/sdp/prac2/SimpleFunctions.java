@@ -21,8 +21,8 @@ public class SimpleFunctions {
         sum += a.get(indexToGet);
       } //tried to put "then" afte the for line, #thanks Fsharp
     }
-
-    
+    return sum;
+  }
 
   public static List<String> Task2(List<String> a) {
     List<String> output = new ArrayList<String>();
@@ -55,23 +55,22 @@ public class SimpleFunctions {
     }
     return count == 0;
   }
-public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
+  public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
         List<Integer> res = new ArrayList<Integer>();   //create new list to store the new elements 
-        if (a.size() != b.size()) {
+        if (a.size() < b.size() || a.size() > b.size()) {
             return null;     //returns null if lists are not same size
         } else {
-            int mult;
+            int mult = 0;
             for (int i = 0; i < a.size(); i++){
                 //iterates through list multiplying necessary elements 
                 //adds result to the new list
-                mult = a.get(i) * b.get(b.size() - 1 - i);
+                mult = a.get(i) * b.get(b.size() -1 - i);
                 res.add(mult);
             }
             return res;
         }
     }
-    return sum;
-  }
+
   public static boolean Task5(List<Integer> a) {
     int n = a.size();
     for (int i = 1; i < n; i++) {
