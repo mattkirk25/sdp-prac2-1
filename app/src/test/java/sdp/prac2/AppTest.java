@@ -62,25 +62,25 @@ class AppTest {
         // Arrange
         SimpleFunctions classBeingTested = new SimpleFunctions();
         List<String> data = Arrays.asList("((()))", "(()))", "(((((((((())))))))))", "(())()", ")(())");
-        List<String> expected = Arrays.asList("true", "false", "true", "true", "false");
+        List<boolean> expected = Arrays.asList(true, false, true, true, false);
         // Act
-        List<String> result = classBeingTested.Task3(data);
+        List<boolean> result = classBeingTested.Task3(data);
         // Assert
         assertIterableEquals(expected, result);
         // Test 2
         // Arrange
         List<String> data2 = Arrays.asList("((()))))))", "((((((((()))))))))))))))))", "((()))");
-        List<String> expected2 = Arrays.asList("false", "false", "true");
+        List<boolean> expected2 = Arrays.asList(false, false, true);
         // Act
-        List<String> result2 = classBeingTested.Task3(data2);
+        List<boolean> result2 = classBeingTested.Task3(data2);
         // Assert
         assertIterableEquals(expected2, result2);
         // Test 3
         // Arrange
         List<String> data3 = Arrays.asList("", "(((((((())))", "((()))");
-        List<String> expected3 = Arrays.asList("false", "false", "true");
+        List<boolean> expected3 = Arrays.asList(false, false, true);
         // Act
-        List<String> result3 = classBeingTested.Task3(data3);
+        List<boolean> result3 = classBeingTested.Task3(data3);
         // Assert
         assertIterableEquals(expected3, result3);
     }
@@ -115,7 +115,7 @@ class AppTest {
         //Arrange 
         List<Integer> a3 = Arrays.asList(4,6,3,99);
         List<Integer> b3 = Arrays.asList(5,10,7,3);
-        List<Integer> expected3 = Arrays.asList(13,42,30,495);
+        List<Integer> expected3 = Arrays.asList(12,42,30,495);
         //Act
         List<Integer> result3 = classBeingTested.Task4(a3,b3);
         //Assert
