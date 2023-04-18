@@ -115,7 +115,7 @@ class AppTest {
         //Arrange 
         List<Integer> a3 = Arrays.asList(4,6,3,99);
         List<Integer> b3 = Arrays.asList(5,10,7,3);
-        List<Integer> expected3 = Arrays.asList(13,42,30,495);
+        List<Integer> expected3 = Arrays.asList(12,42,30,495);
         //Act
         List<Integer> result3 = classBeingTested.Task4(a3,b3);
         //Assert
