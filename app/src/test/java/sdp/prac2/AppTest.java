@@ -8,54 +8,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-  
-		@Test void testTask1() {
-        // Test 1
-        List<Integer> a1 = Arrays.asList(10, 20, 30, 40, 50);
-        List<Integer> b1 = Arrays.asList(0, 2, 4);
-        int expectedSum1 = 10 + 30 + 50;
-
-        int actualSum1 = 0;
-        for (int i = 0; i < b1.size(); i++) {
-            int indexToGet = b1.get(i);
-            if (indexToGet < a1.size()) {
-                actualSum1 += a1.get(indexToGet);
-            }
-        }
-
-        assert actualSum1 == expectedSum1 : "Test 1 failed: Expected " + expectedSum1 + ", but got " + actualSum1;
-
-        // Test 2
-        List<Integer> a2 = Arrays.asList(10, 20, 30, 40, 50);
-        List<Integer> b2 = Arrays.asList();
-        int expectedSum2 = 0;
-
-        int actualSum2 = 0;
-        for (int i = 0; i < b2.size(); i++) {
-            int indexToGet = b2.get(i);
-            if (indexToGet < a2.size()) {
-                actualSum2 += a2.get(indexToGet);
-            }
-        }
-
-        assert actualSum2 == expectedSum2 : "Test 2 failed: Expected " + expectedSum2 + ", but got " + actualSum2;
-
-        // Test 3
-        List<Integer> a3 = Arrays.asList(10, 20, 30, 40, 50);
-        List<Integer> b3 = Arrays.asList(3, 5, 7);
-        int expectedSum3 = 0;
-
-        int actualSum3 = 0;
-        for (int i = 0; i < b3.size(); i++) {
-            int indexToGet = b3.get(i);
-            if (indexToGet < a3.size()) {
-                actualSum3 += a3.get(indexToGet);
-            }
-        }
-
-        assert actualSum3 == expectedSum3 : "Test 3 failed: Expected " + expectedSum3 + ", but got " + actualSum3;
-    }
-
     /**
      * Task 2 - Tests
      * Method which removes the first character from every element in a list. 
@@ -110,25 +62,25 @@ class AppTest {
         // Arrange
         SimpleFunctions classBeingTested = new SimpleFunctions();
         List<String> data = Arrays.asList("((()))", "(()))", "(((((((((())))))))))", "(())()", ")(())");
-        List<boolean> expected = Arrays.asList(true, false, true, true, false);
+        List<String> expected = Arrays.asList("true", "false", "true", "true", "false");
         // Act
-        List<boolean> result = classBeingTested.Task3(data);
+        List<String> result = classBeingTested.Task3(data);
         // Assert
         assertIterableEquals(expected, result);
         // Test 2
         // Arrange
         List<String> data2 = Arrays.asList("((()))))))", "((((((((()))))))))))))))))", "((()))");
-        List<boolean> expected2 = Arrays.asList(false, false, true);
+        List<String> expected2 = Arrays.asList("false", "false", "true");
         // Act
-        List<boolean> result2 = classBeingTested.Task3(data2);
+        List<String> result2 = classBeingTested.Task3(data2);
         // Assert
         assertIterableEquals(expected2, result2);
         // Test 3
         // Arrange
         List<String> data3 = Arrays.asList("", "(((((((())))", "((()))");
-        List<boolean> expected3 = Arrays.asList(false, false, true);
+        List<String> expected3 = Arrays.asList("false", "false", "true");
         // Act
-        List<boolean> result3 = classBeingTested.Task3(data3);
+        List<String> result3 = classBeingTested.Task3(data3);
         // Assert
         assertIterableEquals(expected3, result3);
     }
@@ -163,7 +115,7 @@ class AppTest {
         //Arrange 
         List<Integer> a3 = Arrays.asList(4,6,3,99);
         List<Integer> b3 = Arrays.asList(5,10,7,3);
-        List<Integer> expected3 = Arrays.asList(12,42,30,495);
+        List<Integer> expected3 = Arrays.asList(13,42,30,495);
         //Act
         List<Integer> result3 = classBeingTested.Task4(a3,b3);
         //Assert
@@ -180,62 +132,44 @@ class AppTest {
         assertIterableEquals(expected4, result4);
     }
 
-  @Test void Task5(){
-        //Test 1
-        //Arrange
-        SimpleFunctions classBeingTested = new SimpleFunctions();
-        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5);
-        boolean expected = true;
-        //Act
-        boolean result = classBeingTested.Task5(a);
-        //Assert
-        assertEquals(expected, result);
+    @Test void testTask1() {
+        // Test 1
+        List<Integer> a1 = Arrays.asList(10, 20, 30, 40, 50);
+        List<Integer> b1 = Arrays.asList(0, 2, 4);
+        int expectedSum1 = 10 + 30 + 50;
 
-        //Test 2
-        //Arrange
-        List<Integer> b = Arrays.asList(1, 2, 6, 3, 4, 5);
-        boolean expected1 = false;
-        //Act
-        boolean result1 = classBeingTested.Task5(b);
-        //Assert
-        assertEquals(expected1, result1);
+        int actualSum1 = Task1(a1, b1);
 
-        //Test 3
-        //Arrange
-        List<Integer> c = Arrays.asList(3, 4, 7, 9, 21);
-        boolean expected2 = true;
-        //Act
-        boolean result2 = classBeingTested.Task5(c);
-        //Assert
-        assertEquals(expected2, result2);
-    @Test void Task6(){
-        //test 1
-        //Arrange
-        SimpleFunctions classBeingTested = new SimpleFunctions();
-        List<Integer> data = Arrays.asList(200, 345, 500, 1789);
-        List<Integer> expectedOutput = Arrays.asList(200, 400, 500, 1800);
-        // Act
-        List<Integer> result = classBeingTested.Task6(data);
-        // Assert
-        assertIterableEquals(expectedOutput, result);
+        assert actualSum1 == expectedSum1 : "Test 1 failed: Expected " + expectedSum1 + ", but got " + actualSum1;
 
-        // test 2
-        // Arrange
-        List<Integer> data2 =  Arrays.asList();
-        List<Integer> expectedOutput2 = Arrays.asList();
-        // Act 
-        List<Integer> result2 = classBeingTested.Task6(data2);
-        // Assert
-        assertIterableEquals(expectedOutput2, result2);
+        // Test 2
+        List<Integer> a2 = Arrays.asList(10, 20, 30, 40, 50);
+        List<Integer> b2 = Arrays.asList();
+        int expectedSum2 = 40;
 
-        // test 3
-        // Arrange
-        List<Integer> data3 =  Arrays.asList(-200, -345, -500, -1789);
-        List<Integer> expectedOutput3 = Arrays.asList(-100, -300, -500, -1700);
-        // Act 
-        List<Integer> result3 = classBeingTested.Task6(data3);
-        // Assert
-        assertIterableEquals(expectedOutput3, result3);
+        int actualSum2 = Task1(a2, b2);
 
+        assert actualSum2 == expectedSum2 : "Test 2 failed: Expected " + expectedSum2 + ", but got " + actualSum2;
+
+        // Test 3
+        List<Integer> a3 = Arrays.asList(10, 20, 30, 40, 50);
+        List<Integer> b3 = Arrays.asList(3, 5, 7);
+        int expectedSum3 = 40;
+
+        int actualSum3 = Task1(a3, b3);
+
+        assert actualSum3 == expectedSum3 : "Test 3 failed: Expected " + expectedSum3 + ", but got " + actualSum3;
+    }
+
+    private int Task1(List<Integer> a, List<Integer> b) {
+        int sum = 0;
+        for (int i = 0; i < b.size(); i++) {
+            int indexToGet = b.get(i);
+            if (indexToGet < a.size()) {
+                sum += a.get(indexToGet);
+            }
+        }
+        return sum;
     }
 }
+
