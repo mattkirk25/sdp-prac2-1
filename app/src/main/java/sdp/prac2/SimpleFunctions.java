@@ -37,7 +37,7 @@ public class SimpleFunctions {
     public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
         List<Integer> res = new ArrayList<Integer>();   //create new list to store the new elements 
         if (a.size() != b.size()) {
-            return null     //returns null if lists are not same size
+            return null;     //returns null if lists are not same size
         } else {
             int mult;
             for (int i = 0; i < a.size(); i++){
